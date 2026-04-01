@@ -1,4 +1,4 @@
-📌# Overview
+# Overview 📌
 
 In August 2025, I worked as a Data Analyst Intern at PT GroundProbe. During this internship, I was responsible for updating outdated device data and building an interactive dashboard using Power BI to help the IT team monitor and manage company devices more effectively.
 
@@ -29,4 +29,6 @@ The dashboard includes several key visualizations:
 
 ## Tools Used
 Power BI
+<br>
 Microsoft Excel
+<br><br>
