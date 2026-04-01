@@ -10,7 +10,6 @@ Support IT team in monitoring, maintenance, and decision-making
 https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true
 
 ## Dashboard Features
-
 The dashboard includes several key visualizations:
 * Employee profile linked to assigned devices
 * Total number of devices
@@ -30,9 +29,8 @@ The dashboard includes several key visualizations:
 * Task scheduling using calendar
 * Total completed tasks per year
 
-![Dashboard Overview](https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true)
-
-<img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true" width="600">
+###  MAIN Board
+<img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true" width="800">
 
 <p align="center">
   <img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true" width="600">
