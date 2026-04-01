@@ -6,6 +6,9 @@ In August 2025, I worked as a Data Analyst Intern at PT GroundProbe. During this
 Update and organize device inventory data
 Provide clear and interactive data visualization
 Support IT team in monitoring, maintenance, and decision-making
+
+https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true
+
 ## Dashboard Features
 
 The dashboard includes several key visualizations:
