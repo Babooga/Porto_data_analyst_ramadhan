@@ -65,3 +65,9 @@ individual patient waitlist records for deeper investigation
 <p align="center">
   <img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/patient_breakdown_visualization/detail_board.png?raw=true" width="800">
 </p>
+
+## Tools Used
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=black)
+<br>
+![Excel](https://img.shields.io/badge/Excel-217346?logo=microsoft-excel&logoColor=white)
+<br><br>
