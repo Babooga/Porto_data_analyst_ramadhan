@@ -30,6 +30,14 @@ The dashboard includes several key visualizations:
 * Task scheduling using calendar
 * Total completed tasks per year
 
+![Dashboard Overview](https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true)
+
+<img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true" width="600">
+
+<p align="center">
+  <img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/Intern_PT.groundprobe/main_device_board.png?raw=true" width="600">
+</p>
+
 ## Tools Used
 Power BI
 <br>
