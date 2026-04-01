@@ -12,6 +12,7 @@ detect bottlenecks, and support smarter resource allocation — transforming raw
 medical records into clear, actionable insights.
 
 Embeded Link : https://app.powerbi.com/view?r=eyJrIjoiZTkzMTRjNjYtNzExOC00MjlkLTg2MjctNDY0NzNiM2VlMTQyIiwidCI6IjkwYWZmZTBmLWMyYTMtNDEwOC1iYjk4LTZjZWI0ZTk0ZWYxNSIsImMiOjEwfQ%3D%3D
+
 ---
 
 ## Objective
@@ -57,7 +58,7 @@ individual patient waitlist records for deeper investigation
 
 ## Main_board
 <p align="center">
-  <img src="[./images/dashboard-preview.png](https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/patient_breakdown_visualization/main_board.png?raw=true)" width="800">
+  <img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/patient_breakdown_visualization/main_board.png?raw=true" width="800">
 </p>
 
 ## Detail_board
