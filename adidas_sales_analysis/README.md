@@ -46,3 +46,5 @@ The dashboard includes the following key metrics and visualizations:
 <p align="center">
   <img src="https://github.com/Babooga/Porto_data_analyst_ramadhan/blob/main/adidas_sales_analysis/Main%20Board.png?raw=true" width="800">
 </p>
+
+Embed link : https://app.powerbi.com/view?r=eyJrIjoiYzg3NTlmMzEtODg3ZS00YzNmLWI2ZTktNmE4MTYyNjZkNTcxIiwidCI6IjkwYWZmZTBmLWMyYTMtNDEwOC1iYjk4LTZjZWI0ZTk0ZWYxNSIsImMiOjEwfQ%3D%3D
