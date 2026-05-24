@@ -1,47 +1,51 @@
 # Warehouse ETL Project 
 
 ![Database Status](https://img.shields.io/badge/Database-MS%20SQL%20Server-red)
-![Language](https://img.shields.io/badge/Language-T--SQL%20%2F%20Python-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Medallion-blue)
+![Modeling](https://img.shields.io/badge/Data%20Modeling-Star%20Schema-orange)
 
-## 📌 Deskripsi Proyek
-Proyek ini adalah implementasi pipeline ETL (Extract, Transform, Load) untuk membangun Data Warehouse menggunakan **Microsoft SQL Server (MSSQL)**. Proyek ini mengekstrak data dari [Sebutkan nama/sumber dataset, misal: File CSV / API / Database Transaksional OLTP], melakukan transformasi data (cleansing, deduplikasi, bisnis logika), dan memuatnya ke dalam skema Data Warehouse (Dimensional Modeling) untuk kebutuhan analitik.
+## Project Overview
+This project implements an end-to-end ETL (Extract, Transform, Load) pipeline to build a robust Data Warehouse using **Microsoft SQL Server (MSSQL)**. The pipeline leverages the **Medallion Architecture** for data quality management and a **Star Schema** design for data modeling. 
 
----
+The source data consists of transactional dummy datasets originating from operational **ERP** and **CRM** systems, provided in `.csv` format.
 
-## 🏗️ Arsitektur Data & Alur ETL
-Pipeline ETL ini berjalan melalui tiga tahapan utama:
-1. **Extract**: Mengambil data mentah dari *Source Dataset* dan memasukkannya ke dalam *Staging Area* (`staging` schema).
-2. **Transform**: Melakukan pembersihan data, penanganan nilai yang hilang (*missing values*), standardisasi format, dan pembentukan tabel dimensi serta fakta.
-3. **Load**: Memasukkan data yang telah bersih ke dalam skema Data Warehouse utama (`dw` atau `dbo` schema) menggunakan pendekatan *SCD (Slowly Changing Dimension)* atau *Append/Upsert*.
-
-
+* **Source Dataset:** [GitHub Datasets Repository](https://github.com/Babooga/Porto_data_analyst_ramadhan/tree/main/warehouse_ETL_project/datasets)
 
 ---
 
-## 📊 Dataset & Sumber Data
-* **Sumber Dataset:** [Masukkan link sumber data, misal: Kaggle / Server OLTP]
-* **Format Data:** [Misal: .csv, .json, atau SQL Dump]
-* **Deskripsi Singkat:** Dataset ini berisi informasi tentang [misal: transaksi penjualan, inventaris gudang, data pelanggan] dari tahun [XXXX] hingga [XXXX].
+## Data Architecture
+The data processing pipeline is structured into three logical layers following the **Medallion Architecture** principles:
+
+![Level Architecture](https://raw.githubusercontent.com/Babooga/Porto_data_analyst_ramadhan/main/warehouse_ETL_project/document/level%20architecture.drawio.png)
+
+1. **Bronze Layer:** Acts as the landing zone for raw data directly ingested from source systems. No treatments or modifications are applied here to preserve historical data integrity.
+2. **Silver Layer:** Data from the Bronze layer undergoes rigorous data cleansing, data type standardization, deduplication, and initial transformations.
+3. **Gold Layer:** The final business-ready layer where clean data is modeled into a **Star Schema**. In this stage, 6 operational source tables are transformed into 3 analytical database *Views*: `dim.customer`, `dim.product`, and `fact.sales`. These are fully optimized for downstream consumption, such as Business Intelligence reporting and Machine Learning workloads.
+
+The incremental progression of data preservation across these layers is illustrated below:
+
+![Data Preserved](https://raw.githubusercontent.com/Babooga/Porto_data_analyst_ramadhan/main/warehouse_ETL_project/document/data%20preserved.drawio.png)
 
 ---
 
-## 🗄️ Desain Skema Data Warehouse
-Data Warehouse ini didesain menggunakan pendekatan **Star Schema / Snowflake Schema** [pilih salah satu] untuk mengoptimalkan performa query analitik.
+## Data Integration Overview
+Prior to data modeling in the Gold Layer, all disparate raw sources from the CRM and ERP systems are integrated. This integration bridges separate business silos by mapping shared relational keys:
 
-### Tabel Dimensi (Dimensions)
-* `Dim_Product`: Menyimpan informasi detail produk.
-* `Dim_Customer`: Menyimpan data profil pelanggan.
-* `Dim_Date`: Tabel dimensi waktu untuk analisis berbasis periode.
+![Data Integration](https://raw.githubusercontent.com/Babooga/Porto_data_analyst_ramadhan/main/warehouse_ETL_project/document/data%20integration.drawio.png)
 
-### Tabel Fakta (Facts)
-* `Fact_Sales`: Menyimpan data metrik transaksi penjualan (Quantity, Revenue) dan *foreign keys* ke tabel dimensi.
+* **Product Entity:** Maps product profile info from the CRM system with specific product categories managed in the ERP system.
+* **Customer Entity:** Enriches basic customer profiles from the CRM with extra demographic details (e.g., birthdate, country location) extracted from the ERP based on matching Customer IDs.
 
 ---
 
-## 🚀 Cara Menjalankan Proyek
+## Schema Design (Star Schema)
+The Data Warehouse within the *Gold Layer* is structured using a **Star Schema** approach. The centralized fact table, `fact.sales`, stores business metrics and is directly connected to the surrounding dimension tables, `dim.customer` and `dim.product`. This dimensional modeling approach was chosen for its intuitive structure, ease of understanding, and high query performance for analytical reporting on this data scale.
 
-### Prerequisites
-* MS SQL Server (v2019 atau terbaru)
-* SQL Server Management Studio (SSMS) atau Azure Data Studio
-* [Opsional] Python 3.x (jika ekstraksi menggunakan script Python/Pandas)
+![Star Schema Design](https://raw.githubusercontent.com/Babooga/Porto_data_analyst_ramadhan/main/warehouse_ETL_project/document/schema.png)
 
+---
+
+## Data Flow
+The downstream data flow details the step-by-step pipeline execution, ensuring data successfully converges into the Gold Layer as reliable, actionable insights:
+
+![Data Flow](https://raw.githubusercontent.com/Babooga/Porto_data_analyst_ramadhan/main/warehouse_ETL_project/document/data%20flow.drawio.png)
